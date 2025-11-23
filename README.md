@@ -88,10 +88,10 @@ A testing version of the kit is now available on AliExpress:
 
 At the moment, HappyHare has **not yet fully integrated** support for Proportional Feedback Sensors.
 
-Relevant Pull Request:
+Relevant Pull Request:  
  https://github.com/moggieuk/Happy-Hare/pull/779
 
-To use this feature right now, you must switch to igiannakas’ branch:
+To use this feature right now, you must switch to igiannakas’ branch:  
  https://github.com/igiannakas/Happy-Hare/tree/proportional-sync-feedback-control-fixes
 
 
