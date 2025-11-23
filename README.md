@@ -76,7 +76,7 @@ If your MMU board's ADC pin **does not** include a pull-up resistor and you want
 
  
 
-🛒 **Testing Kit Availability **
+**Testing Kit Availability **
 
 A testing version of the kit is now available on AliExpress:
 
