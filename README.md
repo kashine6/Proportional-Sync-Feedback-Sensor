@@ -32,11 +32,9 @@ Instead, it leverages the **ADC input** already available on existing MMU boards
 
 <img src="Assets/7.png" width="70%"/>
 
-A list of recommended ADC-capable pins for common MMU boards will be provided below.
 
- 
 
- 
+
 
 ## ⚠ ADC Pull-up Considerations
 
@@ -52,12 +50,16 @@ You can compensate for this in firmware configuration.
 
 
 
-If your MMU board's ADC pin **does not** include a pull-up resistor and you want a perfectly accurate voltage reading:
+**Optional but not needed:**
+
+If your MMU board's ADC pin does not include a pull-up resistor and you want a perfectly accurate voltage reading.
  You may **move the 0-ohm resistor** on the PSF board to an alternate position to eliminate any offset.
 
 <img src="Assets/6.png" width="70%"/>
 
 
+
+A list of recommended ADC-capable pins for common MMU boards will be provided below:
 
 
 
