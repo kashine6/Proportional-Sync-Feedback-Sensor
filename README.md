@@ -110,7 +110,7 @@ You need to adjust the configuration in the `mmu_hardware.cfg` file within Happy
 
 ```
 sync_feedback_fps_set_point: 0.5
-sync_feedback_fps_range_multiplier: 1.1
+sync_feedback_fps_range_multiplier: 1.0
 sync_feedback_fps_reversed: True
 ```
 
