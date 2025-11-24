@@ -2,6 +2,8 @@
 
 This is a Mini Proportional Sync Feedback Sensor solution designed for MMU systems.
 
+> ⚠️This project is currently in the testing stage.
+
 <img src="Assets/8.png" width="70%"/>
 
 
