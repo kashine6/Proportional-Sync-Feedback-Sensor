@@ -81,8 +81,7 @@ A list of recommended ADC-capable pins for common MMU boards will be provided be
 | **Spring**                      | 0.4 mm × 6 mm × 25 mm, spring steel | 1        |
 | **Magnet**                      | D4 mm × 15 mm N35                   | 1        |
 | **ECAS04 Bowden connector**     | —                                   | 2        |
-| **M2×6 mm self-tapping screw**  |                                     | 2        |
-| **M2×10 mm self-tapping screw** |                                     | 2        |
+| **M2×6 mm SHCS screw**          |                                     | 4        |
 | **5V-to-3.3V Step-Down Module** | optional                            | 1        |
  
 
