@@ -2,9 +2,21 @@
 
 This is a Mini Proportional Sync Feedback Sensor solution designed for MMU systems.
 
+
+
+**Note:**
+
+Currently shifted to the default single-spring version.
+It provides constant compression, which reduces the apparent load on the extruder stepper and helps overcome Bowden friction.
+The GitHub repository will be updated later.
+
+
+
 > ⚠️This project is currently in the testing stage.
 
 <img src="Assets/8.png" width="70%"/>
+
+<img src="Assets/11.png" width="70%"/>
 
 
 
