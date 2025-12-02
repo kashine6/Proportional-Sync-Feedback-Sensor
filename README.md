@@ -8,15 +8,16 @@ This is a Mini Proportional Sync Feedback Sensor solution designed for MMU syste
 
 Currently shifted to the default single-spring version.
 It provides constant compression, which reduces the apparent load on the extruder stepper and helps overcome Bowden friction.
-The GitHub repository will be updated later.
+
+The STLS folder still includes the dual-spring version.
 
 
 
-> ⚠️This project is currently in the testing stage.
-
-<img src="Assets/8.png" width="70%"/>
+> ⚠️**This project is currently in the testing stage.**
 
 <img src="Assets/11.png" width="70%"/>
+
+
 
 
 
@@ -152,18 +153,23 @@ sync_feedback_fps_set_point: 0.5
 
 Notes:
 
+- You can remove the PCB and adjust sync_feedback_fps_set_point so that the debug output value is close to 0 when there is no magnetic field.
+
 - On boards `without ADC pull-ups`, the idle value should be very close to **0.5**.
-- On boards `with pull-ups`, a small offset is normal (typically **0.45–0.55**).
-- You may adjust this value slightly depending on whether the neutral reading drifts toward 0 or toward the extremes.
+- On boards `with pull-ups`, a small offset is normal (typically **0.45–0.55**, my MMB is 0.48/0.52).
 - Whether the value rises or falls depends on the `magnet orientation.
+
+``` 
+STEPPER: MmuSyncFeedbackManager(active): Got sync force feedback update. State: neutral (-0.0034094111017188293)
+```
+
+
 
 
 
 **4. Adjust the usable range (`sync_feedback_fps_range_multiplier`)**
 
-The Hall sensor is non-linear near its extremes, so the design does not use the full ADC range by default.
-
-Increase this multiplier (e.g., **1.1 or 1.2**) so that the left/right extremes map closer to ±1 in the firmware logs.
+You can set it to 1.0 or 1.1. I recommend 1.1, which will make the left and right limits reach ±1.
 
 Example log messages when correctly tuned:
 
