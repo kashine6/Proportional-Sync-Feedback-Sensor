@@ -87,9 +87,8 @@ A list of recommended ADC-capable pins for common MMU boards will be provided be
 | **5V-to-3.3V Step-Down Module** | optional                            | 1        |
 
 **A testing version of the kit is now available on AliExpress:**  
-waiting… it will appear within a week.
 
-
+[Vano3dla aliexpress]([https://example.com](https://www.aliexpress.com/item/1005010470743517.html))
 
 
 
