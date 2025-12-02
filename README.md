@@ -155,7 +155,7 @@ Notes:
 
 - You can remove the PCB and adjust sync_feedback_fps_set_point so that the debug output value is close to 0 when there is no magnetic field.
 
-- On boards `without ADC pull-ups`, the idle value should be very close to **0.5**.
+- On boards `without ADC pull-ups`, the idle value should be **0.5**.
 - On boards `with pull-ups`, a small offset is normal (typically **0.45–0.55**, my MMB is 0.48/0.52).
 - Whether the value rises or falls depends on the `magnet orientation.
 
