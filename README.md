@@ -13,7 +13,7 @@ The STLS folder still includes the dual-spring version.
 
 
 
-> ⚠️**This project is currently in the testing stage.**
+> ⚠️**This project is currently in the testing stage. It will be open-sourced after testing.**
 
 <img src="Assets/11.png" width="70%"/>
 
