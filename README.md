@@ -88,7 +88,7 @@ A list of recommended ADC-capable pins for common MMU boards will be provided be
 
 **A testing version of the kit is now available on AliExpress:**  
 
-[Vano3dla aliexpress]([https://example.com](https://www.aliexpress.com/item/1005010470743517.html))
+[Vano3dla aliexpress](https://www.aliexpress.com/item/1005010470743517.html)
 
 
 
