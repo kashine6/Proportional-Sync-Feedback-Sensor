@@ -46,7 +46,7 @@ Instead, it leverages the **ADC input** already available on existing MMU boards
 
 - **Power input must be `3.3V` only.**  
 
-  > ⚠️⚠️**Do NOT use `5V` — this may damage your controller board.**⚠️⚠️
+  > ⚠️⚠️Do NOT use `5V` — this may damage your controller board.⚠️⚠️
 
 <img src="Assets/7.png" width="70%"/>
 
