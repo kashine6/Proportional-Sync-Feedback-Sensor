@@ -43,7 +43,10 @@ Instead, it leverages the **ADC input** already available on existing MMU boards
 
 
 - **You must connect the signal output to a pin that supports ADC input.**
-- **Power input must be `3.3V` only.**  ⚠️⚠️**Do NOT use `5V` — this may damage your controller board.**⚠️⚠️
+
+- **Power input must be `3.3V` only.**  
+
+  > ⚠️⚠️**Do NOT use `5V` — this may damage your controller board.**⚠️⚠️
 
 <img src="Assets/7.png" width="70%"/>
 
