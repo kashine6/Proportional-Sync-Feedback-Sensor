@@ -59,17 +59,14 @@ To support both boards with and without pull-up resistors,  this sensor board us
 
 
 
-Using a MMU board with ADC pull-ups will cause the sensor's ADC reading to shift upward by approximately **+0.1V** (depending on pull-up resistance).
-
-You can compensate for this in firmware configuration.
-
-
+Using an MMU board with ADC pull-ups will cause the sensor's ADC reading to shift upward by approximately +0.1V (not constant; this has been minimized using the amplifier). 
+You can adjust the neutral position value in the configuration to fix this issue.
 
 
 
 ## 📍 Recommended ADC Pins
 A list of recommended ADC-capable pins for common MMU boards will be provided below:
-<img src="Assets/9.jpg" width="85%"/>
+<img src="Assets/9.png" width="85%"/>
 
 
 
@@ -77,15 +74,17 @@ A list of recommended ADC-capable pins for common MMU boards will be provided be
 
 ## 📦 Bill of Materials (BOM)
 
-| Item                            | Specification                       | Quantity |
-| ------------------------------- | ----------------------------------- | -------- |
-| **PSF Board**                   | —                                   | 1        |
-| **Spring**                      | 0.4 mm × 6 mm × 25 mm, spring steel | 1        |
-| **Magnet**                      | D4 mm × 15 mm N35                   | 1        |
-| **ECAS04 Bowden connector**     | —                                   | 2        |
-| **ECAS_Clip**                   | Please use the STL file for printing to ensure consistent thickness    | 2        |
-| **M2×6 mm SHCS screw**          |                                     | 4        |
-| **5V-to-3.3V Step-Down Module** | optional                            | 1        |
+| Item                            | Specification                                                | Quantity |
+| ------------------------------- | ------------------------------------------------------------ | -------- |
+| **PSF Board**                   | —                                                            | 1        |
+| **Spring**                      | 0.4 mm × 6 mm × 25 mm, spring steel                          | 1        |
+| **Magnet**                      | D4 mm × 15 mm N35                                            | 1        |
+| **ECAS04 Bowden connector**     | —                                                            | 2        |
+| **ECAS_Clip**                   | Please use the STL file for printing to ensure consistent thickness | 2        |
+| **M2×6 mm SHCS screw**          |                                                              | 4        |
+| **5V-to-3.3V Step-Down Module** | optional: Use when a 3.3V power supply is not available on your mmu board. | 1        |
+
+
 
 **A testing version of the kit is now available on AliExpress:**  
 
@@ -138,8 +137,7 @@ Move the slider to its left and right limit positions and observe the log output
   sync_feedback_fps_reversed: False
   ```
 
-<img src="Assets/10.jpg" width="70%"/>
-
+<img src="Assets/12.png" width="70%"/>
 
 
 
@@ -185,6 +183,20 @@ sync_feedback_fps_range_multiplier: 1.0
 ```
 
 
+
+**5. Modify the contents of `mmu_parameters.cfg`.**
+
+``` 
+sync_feedback_enabled: 1
+sync_feedback_proportional_sensor: 1
+sync_feedback_buffer_range: 9.3     # PSF single-spring version
+sync_feedback_buffer_maxrange: 9.3
+
+# option
+sync_endguard_enabled: 1
+sync_endguard_band: 0.80
+sync_endguard_distance_mm: 6.0
+```
 
 
 
