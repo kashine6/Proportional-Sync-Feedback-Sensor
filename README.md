@@ -42,14 +42,14 @@ For details, please refer to the relevant Happy-Hare documentation.
 This design does not use a dedicated standalone mainboard.
 Instead, it leverages the ADC input already available on existing MMU boards.
 
-After updating to V1.1, it should be possible to find a usable ADC interface and a suitable voltage interface on all MMU mainboards.
+After updating to V1.1, it should be possible to find a usable ADC interface and a suitable voltage interface on all MMU boards.
 
-If you want to produce the boards yourself, the PCB Gerber files are provided and can be used under the GPLv3 license.
+If you want to produce the boards yourself, the **PCB Gerber files** are provided and can be used under the GPLv3 license.
 If you prefer not to make the boards yourself, you can get the kit mentioned below.
 
 
 
-**✅ PSF Board Schematic and PCB：**
+**✅ PSF Board Schematic and PCB**
 
 <img src="Assets/13.jpg" width="50%"/>
 
@@ -59,7 +59,7 @@ If you prefer not to make the boards yourself, you can get the kit mentioned bel
 
 <img src="Assets/7.png" width="70%"/>
 
-**✅PCB Changelog:**
+**✅PCB Changelog**
 
 V1.1
 - Added wide input voltage support (3.3V–5V) compared to v1.0
@@ -70,7 +70,7 @@ V1.0
 
 
 
-**✅Important Notice**: 
+**✅Important Notice **
 
 
 - You must connect the signal output to a pin that supports ADC input.
@@ -83,7 +83,7 @@ V1.0
 
 
 
-**✅ADC Pull-up Considerations: **
+**✅ADC Pull-up Considerations** 
 
 Some boards—such as **MMB, EBB36, or EBB42**—have **built-in pull-up resistors** on all available ADC inputs.
 
