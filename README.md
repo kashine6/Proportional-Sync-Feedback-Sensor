@@ -39,22 +39,19 @@ For details, please refer to the relevant Happy-Hare documentation.
 
 ## 🛠 Hardware Design
 
-This design does **not** use a dedicated standalone mainboard.
-Instead, it leverages the **ADC input** already available on existing MMU boards.
+This design does not use a dedicated standalone mainboard.
+Instead, it leverages the ADC input already available on existing MMU boards.
 
 After updating to V1.1, it should be possible to find a usable ADC interface and a suitable voltage interface on all MMU mainboards.
 
-
-
 If you want to produce the boards yourself, the PCB Gerber files are provided and can be used under the GPLv3 license.
-
 If you prefer not to make the boards yourself, you can get the kit mentioned below.
 
 
 
 **✅ PSF Board Schematic and PCB：**
 
-<img src="Assets/13.JPG" width="50%"/>
+<img src="Assets/13.jpg" width="50%"/>
 
 
 
