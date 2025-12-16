@@ -112,18 +112,18 @@ A list of recommended ADC-capable pins for common MMU boards will be provided be
 | **ECAS04 Bowden connector**     | —                                                            | 2        |
 | **ECAS_Clip**                   | Please use the STL file for printing to ensure consistent thickness | 2        |
 | **M2×6 mm SHCS screw**          |                                                              | 4        |
-| **5V-to-3.3V Step-Down Module** | optional: Use when a 3.3V power supply is not available on your mmu board. | 1        |
+| **5V-to-3.3V Step-Down Module** | Optional: Only required for V1.0 PCB if your board doesn’t provide a 3.3V. | 1        |
 
 
 
-**A kit is now available on AliExpress:**  
+**A kit is available on AliExpress:**  
 
 [Aliexpress](https://www.aliexpress.com/item/1005010470743517.html)
 
 
 
 
-## 🔧 Firmware Support (HappyHare)
+## 🔧 Firmware Support (Happy-Hare)
 
 At the moment, HappyHare has **not yet fully integrated** support for Proportional Feedback Sensors.
 
