@@ -13,8 +13,6 @@ The STLS folder still includes the dual-spring version.
 
 
 
-> ⚠️**This project is currently in the testing stage. It will be open-sourced after testing.**
-
 <img src="Assets/11.png" width="70%"/>
 
 
@@ -23,15 +21,18 @@ The STLS folder still includes the dual-spring version.
 
 ## 🧩 What Is a Proportional Sync Feedback Sensor?
 
-A *Proportional Feedback Sensor* is a more advanced type of feedback sensor solution.
-Compared to other feedback solutions, it:
+The Proportional Feedback Sensor is a more advanced feedback solution that uses analog signals.
 
-- **Outputs a signal ranging from 1.0 (maximum compression) to -1.0 (maximum tension)**
-- **0.0 represents the neutral position**
+Unlike other solutions that rely on D2F switches, it:
 
-With this signal, the firmware can determine the exact current position of the feedback slider and adjust it toward neutral at any moment.
+- **Outputs a signal ranging from 0 to 1**
+- **0.5 represents the neutral position**
 
-It can also function as a simplified **clog and tangle detection mechanism without using an encoder**.
+With this signal, the printer can determine the exact current position of the feedback slider and adjust it toward neutral at any moment.
+
+Happy-Hare has developed many powerful additional features for this type of sensor. 
+
+For details, please refer to the relevant Happy-Hare documentation.
 
 
 
@@ -41,26 +42,55 @@ It can also function as a simplified **clog and tangle detection mechanism witho
 This design does **not** use a dedicated standalone mainboard.
 Instead, it leverages the **ADC input** already available on existing MMU boards.
 
+After updating to V1.1, it should be possible to find a usable ADC interface and a suitable voltage interface on all MMU mainboards.
 
-- **You must connect the signal output to a pin that supports ADC input.**
 
-- **Power input must be `3.3V` only.**  
 
-  > ⚠️⚠️Do NOT use `5V` — this may damage your controller board.⚠️⚠️
+If you want to produce the boards yourself, the PCB Gerber files are provided and can be used under the GPLv3 license.
+
+If you prefer not to make the boards yourself, you can get the kit mentioned below.
+
+
+
+**✅ PSF Board Schematic and PCB：**
+
+<img src="Assets/13.JPG" width="50%"/>
+
+
+
+<img src="Assets/14.jpg" width="90%"/>
 
 <img src="Assets/7.png" width="70%"/>
 
+**✅PCB Changelog:**
+
+V1.1
+- Added wide input voltage support (3.3V–5V) compared to v1.0
+
+V1.0
+- Supports 3.3V input only
+- Compatible with ADC interfaces with and without pull-up resistors
 
 
 
+**✅Important Notice**: 
 
-## ⚠ ADC Pull-up Considerations
+
+- You must connect the signal output to a pin that supports ADC input.
+
+  > Recommended ADC Pins for common mainboards are shown in the diagram below.
+
+- Version 1.1 supports a wide input voltage range of 3.3V–5V, while version 1.0 requires the power input to be 3.3V only.
+
+  > ⚠️⚠️Do NOT use `5V` in Version 1.0 — this may damage your controller board.⚠️⚠️
+
+
+
+**✅ADC Pull-up Considerations: **
 
 Some boards—such as **MMB, EBB36, or EBB42**—have **built-in pull-up resistors** on all available ADC inputs.
 
 To support both boards with and without pull-up resistors,  this sensor board uses a special design compatible with both cases.
-
-
 
 Using an MMU board with ADC pull-ups will cause the sensor's ADC reading to shift upward by approximately +0.1V (not constant; this has been minimized using the amplifier). 
 You can adjust the neutral position value in the configuration to fix this issue.
@@ -89,9 +119,9 @@ A list of recommended ADC-capable pins for common MMU boards will be provided be
 
 
 
-**A testing version of the kit is now available on AliExpress:**  
+**A kit is now available on AliExpress:**  
 
-[Vano3dla aliexpress](https://www.aliexpress.com/item/1005010470743517.html)
+[Aliexpress](https://www.aliexpress.com/item/1005010470743517.html)
 
 
 
