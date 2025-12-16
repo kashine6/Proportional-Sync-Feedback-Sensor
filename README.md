@@ -70,7 +70,7 @@ V1.0
 
 
 
-**✅Important Notice **
+**✅Important Notice**
 
 
 - You must connect the signal output to a pin that supports ADC input.
