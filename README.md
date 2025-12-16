@@ -55,7 +55,7 @@ If you prefer not to make the boards yourself, you can get the kit mentioned bel
 
 
 
-<img src="Assets/14.jpg" width="90%"/>
+<img src="Assets/14.jpg" width="70%"/>
 
 <img src="Assets/7.png" width="70%"/>
 
