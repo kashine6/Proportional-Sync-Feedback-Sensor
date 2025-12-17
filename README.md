@@ -123,49 +123,130 @@ A list of recommended ADC-capable pins for common MMU boards will be provided be
 
 
 
-## 🔧 Firmware Support (Happy-Hare)
+## 🔧 Configuration
 
-At the moment, HappyHare has **not yet fully integrated** support for Proportional Feedback Sensors.
+At the moment, `Happy-Hare` has **integrated** support for Proportional Feedback Sensors.
 
-Relevant Pull Request:  
- https://github.com/moggieuk/Happy-Hare/pull/779
+It is currently in open testing and requires switching to the following branch:
 
-To use this feature right now, you must switch to igiannakas’ branch:  
- https://github.com/igiannakas/Happy-Hare/tree/proportional-sync-feedback-control-fixes
+https://github.com/moggieuk/Happy-Hare/tree/flowguard
+
+Before the official Wiki is updated, you can refer to the following instructions for configuration.
+
+
+
+switching to the flowguard branch:
+
+```bash
+cd ~/Happy-Hare
+
+git fetch --all
+git branch -r
+git checkout -b flowguard origin/flowguard
+git pull
+
+./install.sh
+```
+
+
+
+Afterwards, you need to modify the following settings:
+
+**mmu_hardware.cfg**
+
+```
+[mmu_sensors]
+...
+sync_feedback_tension_pin: {sync_feedback_tension_pin}
+sync_feedback_compression_pin: {sync_feedback_compression_pin}
+
+# Proportional sync feedback sensor configuration. Leave empty if not fitted.
+# (if you have a proportional sensor the sync_feedback_tension_pin and sync_feedback_compression_pin would likely be empty)
+#
+sync_feedback_analog_pin: 			# The ADC pin where the proportional filament pressure sensor is installed
+sync_feedback_analog_max_compression: 1		# Raw sensor reading at max filament compression (buffer squeezed)
+sync_feedback_analog_max_tension: 0		# Raw sensor reading at max filament tension (buffer expanded)
+sync_feedback_analog_neutral_point: 0.50	# Biasing of neutral point (sensor value 0). Normally close to 0.5
+...
+```
+
+
+
+**mmu_parameters.cfg**
+
+```
+# Synchronized gear/extruder movement ----------------------------------------------------------------------------------
+...
+sync_feedback_enabled: 1		        # Turn off even if sensor is installed and active
+sync_feedback_buffer_range: 14.5		# Travel in "buffer" between compression/tension or one sensor and end (see above)
+sync_feedback_buffer_maxrange: 14.5	    # Absolute maximum end-to-end travel (mm) provided by buffer (see above)
+sync_feedback_speed_multiplier: 5	    # % "twolevel" gear speed delta to keep filament neutral in buffer (recommend 5%)
+sync_feedback_boost_multiplier: 3	    # % "twolevel" extra gear speed boost for finding initial neutral position (recommend 3%)
+sync_feedback_extrude_threshold: 5	    # Extruder movement (mm) for updates (keep small but set > retract distance)
+
+# If defined this forces debugging to a telemetry log file "sync_<gate>.jsonl". This is great if trying to tune clog/tangle
+# detection or for getting help on the Happy Hare forum. To plot graph of sync-feedback operation, run:
+#  ~/Happy-Hare/utils/plot_sync_feedback.sh
+#
+sync_feedback_debug_log: 0		# 0 = disable (normal operation), 1 = enable telemetry log (for debugging)
+...
+
+
+...
+# Filament Clog and Tangle Detection ---------------------------------------------------------------------------------
+#  ██████╗██╗      ██████╗  ██████╗         ██╗    ████████╗ █████╗ ███╗   ██╗ ██████╗ ██╗     ███████╗
+# ██╔════╝██║     ██╔═══██╗██╔════╝        ██╔╝    ╚══██╔══╝██╔══██╗████╗  ██║██╔════╝ ██║     ██╔════╝
+# ██║     ██║     ██║   ██║██║  ███╗      ██╔╝        ██║   ███████║██╔██╗ ██║██║  ███╗██║     █████╗ 
+# ██║     ██║     ██║   ██║██║   ██║     ██╔╝         ██║   ██╔══██║██║╚██╗██║██║   ██║██║     ██╔══╝ 
+# ╚██████╗███████╗╚██████╔╝╚██████╔╝    ██╔╝          ██║   ██║  ██║██║ ╚████║╚██████╔╝███████╗███████╗
+#  ╚═════╝╚══════╝ ╚═════╝  ╚═════╝     ╚═╝           ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝╚══════╝
+#
+# Options are available to automatically detects extruder clogs and MMU tangles. Each option works independently and
+# can be combined. Flowguard can even discern the difference between an extruder clog and a spool tangle!
+#
+# Flowguard:  This intelligently measures filament tension (only available if sync-feedback buffer is fitted)
+#
+# Encoder detection: This monitors encoder movement and compares to extruder (only available if encoder is fitted)
+#
+flowguard_enabled: 1			# 0 = Flowguard protection disabled, 1 = Enabled
+
+# The flowguard_max_relief is the amount of relief movement (mm) that Happy Hare will wait until triggering a clog or runout.
+# A smaller value is more sensitive to triggering. Since the relief depends on 'sync_feedback_speed_multiplier' and
+# 'sync_feedback_buffer_range'. It is generally a good starting point if using 5% sync_feedback_speed_multiplier to use
+# about the same distance as sync_feedback_buffer_range. Note that one sided switches (Compression-only and Tension-only)
+# can generally be lower.
+flowguard_max_relief: 8
+
+# The max_motion is the absolute max permitted extruder movement while the sensor is in an extreme state. Consider this
+# added protection on top of the primary max_relief amount. Again a smaller value is more sensitive to triggering.
+flowguard_max_motion: 80
+
+# Encoder clog/tangle detection watches for movement over either a static or automatically adjusted distance - if no encoder
+# movement is seen when the extruder moves this distance a clog/tangle event will be run. Allowing the distance to be
+# adjusted automatically will generally allow for a quicker trigger but use a static length if you run into false triggers.
+# Note that this feature cannot disinguish between clog or tangle.
+enable_clog_detection: 2		# 0 = Disable, 1 = Static length clog detection, 2 = Automatic length clog detection
+...
+```
+
+
 
 
 
 ##  ⚙️ Calibration
 
-**1. Enable detailed logging**
+#### Manual Calibration
 
-In `mmu_parameters.cfg`, temporarily set:
+Happy-Hare provides a command, `MMU_QUERY_PSENSOR`, to obtain the current raw ADC value. 
 
 ```
-log_level: 4
+$ MMU_QUERY_PSENSOR
+echo: PSENSOR Enabled: True  Value: -1.0  Raw Value: 0.997
 ```
 
-This will let you observe the sensor state in real time.
+You can remove the PSF PCB and place it in a magnetic-field-free environment, use this command to get the value of `sync_feedback_analog_neutral_point`. 
 
-You need to adjust the configuration in the `mmu_hardware.cfg` file within HappyHare according to the situation.
-
-
-
-**2. Determine the correct direction (`sync_feedback_fps_reversed`)**
-
-Move the slider to its left and right limit positions and observe the log output:
-
-- If the front-end trigger reports `tension`, set:
-
-  ```
-  sync_feedback_fps_reversed: True
-  ```
-
-- If the front-end trigger reports **`compressed`**, set:
-
-  ```
-  sync_feedback_fps_reversed: False
-  ```
+Then, move the slider to the Tension and Compression positions respectively to obtain the values of `sync_feedback_analog_max_tension` and `sync_feedback_analog_max_compression`.
 
 <img src="Assets/12.png" width="70%"/>
 
@@ -173,60 +254,72 @@ Move the slider to its left and right limit positions and observe the log output
 
 
 
-**3. Set the neutral position (`sync_feedback_fps_set_point`)**
+#### Automatic Calibration
+
+Happy-Hare provides a calibration command, `MMU_CALIBRATE_PSENSOR`, to automatically calibrate the values of the three ADCs. 
+
+Before running this command, you need to load the filament into the toolhead.
 
 ```
-sync_feedback_fps_set_point: 0.5
-```
-
-Notes:
-
-- You can remove the PCB and adjust sync_feedback_fps_set_point so that the debug output value is close to 0 when there is no magnetic field.
-
-- On boards `without ADC pull-ups`, the idle value should be **0.5**.
-- On boards `with pull-ups`, a small offset is normal (typically **0.45–0.55**, my MMB is 0.48/0.52).
-- Whether the value rises or falls depends on the `magnet orientation.
-
-``` 
-STEPPER: MmuSyncFeedbackManager(active): Got sync force feedback update. State: neutral (-0.0034094111017188293)
-```
-
-
-
-
-
-**4. Adjust the usable range (`sync_feedback_fps_range_multiplier`)**
-
-You can set it to 1.0 or 1.1. I recommend 1.1, which will make the left and right limits reach ±1.
-
-Example log messages when correctly tuned:
-
-```
-STEPPER: MmuSyncFeedbackManager(inactive): Got sync force feedback update. State: tension (-1.0)
-STEPPER: MmuSyncFeedbackManager(inactive): Got sync force feedback update. State: compressed (1.0)
-```
-
-Default value:
-
-```
-sync_feedback_fps_range_multiplier: 1.0
+$ MMU_CALIBRATE_PSENSOR
+...
+// Calibration Results:
+// As wired the recommended setting (in mmu_hardware.cfg) is:
+// [mmu_sensors]
+// sync_feedback_analog_max_compression: 0.9865
+// sync_feedback_analog_max_tension: 0.0016
+// sync_feedback_analog_neutral_point: 0.4941
+// After updating, restart klipper
+...
 ```
 
 
 
-**5. Modify the contents of `mmu_parameters.cfg`.**
+## Others
 
-``` 
-sync_feedback_enabled: 1
-sync_feedback_proportional_sensor: 1
-sync_feedback_buffer_range: 9.3     # PSF single-spring version
-sync_feedback_buffer_maxrange: 9.3
+#### MMU_ADJUST_TENSION
 
-# option
-sync_endguard_enabled: 1
-sync_endguard_band: 0.80
-sync_endguard_distance_mm: 6.0
+In Happy-Hare, the command `MMU_ADJUST_TENSION` can be used to quickly move the slider to the neutral position. This command has already been incorporated into the Blobifier macros.
+
+
+
+#### Mainsail Fluidd Integration
+
+The relevant branches in moggieuk's repository have already added feature enhancements for this type of sensor.
+
 ```
+https://github.com/moggieuk/fluidd-happy-hare-edition/tree/flowguard
+
+https://github.com/moggieuk/mainsail-happy-hare-edition/tree/develop
+```
+
+<img src="Assets/15.jpg" width="50%"/>
+
+
+
+#### Clog/Tangle Detection
+
+In Happy-Hare, the Proportional Sensor can provide stable Clog/Tangle Detection and can be used as a replacement for an encoder in this function.
+
+If the value remains above 0.8 or below -0.8 for a certain period of time, it can be considered a Clog/Tangle.
+
+
+
+#### Generate Debug Sync Plot
+
+First, set `mmu_parameters.cfg > sync_feedback_debug_log` to 1.
+
+Then,
+
+```
+$ cd ~/Happy-Hare/utils/
+$ ./plot_sync_feedback.sh ~/printer_data/logs/sync_<gate>.jsonl
+Saved plot to sim_plot.png
+```
+
+<img src="Assets/16.jpg" width="70%"/>
+
+
 
 
 
