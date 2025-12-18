@@ -215,7 +215,8 @@ flowguard_enabled: 1			# 0 = Flowguard protection disabled, 1 = Enabled
 # 'sync_feedback_buffer_range'. It is generally a good starting point if using 5% sync_feedback_speed_multiplier to use
 # about the same distance as sync_feedback_buffer_range. Note that one sided switches (Compression-only and Tension-only)
 # can generally be lower.
-flowguard_max_relief: 8
+#flowguard_max_relief: 8
+flowguard_max_relief: 14.5
 
 # The max_motion is the absolute max permitted extruder movement while the sensor is in an extreme state. Consider this
 # added protection on top of the primary max_relief amount. Again a smaller value is more sensitive to triggering.
@@ -277,9 +278,9 @@ $ MMU_CALIBRATE_PSENSOR
 
 ## Others
 
-#### MMU_ADJUST_TENSION
+#### Quickly return to the neutral position
 
-In Happy-Hare, the command `MMU_ADJUST_TENSION` can be used to quickly move the slider to the neutral position. This command has already been incorporated into the Blobifier macros.
+In Happy-Hare, the command `MMU_SYNC_FEEDBACK ADJUST_TENSION=1` can be used to quickly move the slider to the neutral position. This command has already been incorporated into the Blobifier macros.
 
 
 
