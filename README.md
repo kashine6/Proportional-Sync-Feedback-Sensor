@@ -226,7 +226,7 @@ flowguard_max_motion: 80
 # movement is seen when the extruder moves this distance a clog/tangle event will be run. Allowing the distance to be
 # adjusted automatically will generally allow for a quicker trigger but use a static length if you run into false triggers.
 # Note that this feature cannot disinguish between clog or tangle.
-enable_clog_detection: 2		# 0 = Disable, 1 = Static length clog detection, 2 = Automatic length clog detection
+encoder_clog_detection_mode: 0		# 0 = Disable, 1 = Static length clog detection, 2 = Automatic length clog detection
 ...
 ```
 
