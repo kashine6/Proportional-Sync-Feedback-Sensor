@@ -149,9 +149,9 @@ $ MMU_CALIBRATE_PSENSOR
 // Calibration Results:
 // As wired the recommended setting (in mmu_hardware.cfg) is:
 // [mmu_sensors]
-// sync_feedback_analog_max_compression: 0.9865
-// sync_feedback_analog_max_tension: 0.0016
-// sync_feedback_analog_neutral_point: 0.4941
+// sync_feedback_analog_max_compression: 0.0023
+// sync_feedback_analog_max_tension:     0.9979
+// sync_feedback_analog_neutral_point:   0.5001
 // After updating, restart klipper
 ...
 ```
