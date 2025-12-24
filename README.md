@@ -134,11 +134,10 @@ For more detailed configuration, please refer to the HappyHare Wiki.
 
 For PSF Sensor one-Spring:  
 
-...
+```  
 sync_feedback_buffer_range: 14.5		# Travel in "buffer" between compression/tension or one sensor and end (see above)
-sync_feedback_buffer_maxrange: 14.5	    # Absolute maximum end-to-end travel (mm) provided by buffer (see above)
-...
-
+sync_feedback_buffer_maxrange: 14.5	    # Absolute maximum end-to-end travel (mm) provided by buffer (see above)  
+```
 
 <img src="Assets/12.png" width="70%"/>
 
