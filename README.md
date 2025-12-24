@@ -2,6 +2,7 @@
 
 This is a Mini Proportional Sync Feedback Sensor solution designed for MMU systems.
 
+After updating to V1.1, it should be possible to find a usable ADC interface and a suitable voltage interface on all MMU boards.
 
 
 **Note:**
@@ -41,8 +42,6 @@ For details, please refer to the relevant Happy-Hare documentation.
 
 This design does not use a dedicated standalone mainboard.
 Instead, it leverages the ADC input already available on existing MMU boards.
-
-After updating to V1.1, it should be possible to find a usable ADC interface and a suitable voltage interface on all MMU boards.
 
 If you want to produce the boards yourself, the **PCB Gerber files** are provided and can be used under the GPLv3 license.
 If you prefer not to make the boards yourself, you can get the kit mentioned below.
