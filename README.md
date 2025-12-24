@@ -1,12 +1,12 @@
 # PSF (Proportional Sync Feedback) Sensor for MMU
 
-This is a Mini Proportional Sync Feedback Sensor solution designed for MMU systems.
-
-After updating to V1.1, 
-it should be possible to find a usable ADC interface and a suitable voltage interface on all MMU boards.
-
+This is a Mini Proportional Sync Feedback Sensor solution designed for MMU systems.  
 
 **Note:**
+
+After updating to V1.1,   
+it should be possible to find a usable ADC interface and a suitable voltage interface on all MMU boards.
+
 
 Currently shifted to the default single-spring version.
 It provides constant compression, which reduces the apparent load on the extruder stepper and helps overcome Bowden friction.
