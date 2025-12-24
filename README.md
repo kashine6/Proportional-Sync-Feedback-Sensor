@@ -95,7 +95,9 @@ You can adjust the neutral position value in the configuration to fix this issue
 
 
 ## 📍 Recommended ADC Pins
-A list of recommended ADC-capable pins for common MMU boards will be provided below:
+You can refer to the chip datasheet to find all GPIOs that support ADC. Below, only one usable pin is marked.  
+
+A list of recommended ADC-capable GPIOs for common MMU boards will be provided below:
 <img src="Assets/9.png" width="85%"/>
 
 
