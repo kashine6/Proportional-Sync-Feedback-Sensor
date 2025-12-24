@@ -125,7 +125,11 @@ A list of recommended ADC-capable pins for common MMU boards will be provided be
 
 ## 🔧 Configuration
 
-At the moment, `Happy-Hare` has **integrated** support for Proportional Feedback Sensors.
+At the moment, `Happy-Hare` has **integrated** support for Proportional Feedback Sensors, and the relevant Wiki documentation has already been published.
+👉➡️:  https://github.com/moggieuk/Happy-Hare/wiki/Synchronized-Gear-Extruder2
+For more detailed configuration, please refer to the HappyHare Wiki.
+
+
 
 It is currently in open testing and requires switching to the following branch:
 
@@ -189,13 +193,13 @@ sync_feedback_debug_log: 0		# 0 = disable (normal operation), 1 = enable telemet
 
 
 ...
-# Filament Clog and Tangle Detection ---------------------------------------------------------------------------------
-#  ██████╗██╗      ██████╗  ██████╗         ██╗    ████████╗ █████╗ ███╗   ██╗ ██████╗ ██╗     ███████╗
-# ██╔════╝██║     ██╔═══██╗██╔════╝        ██╔╝    ╚══██╔══╝██╔══██╗████╗  ██║██╔════╝ ██║     ██╔════╝
-# ██║     ██║     ██║   ██║██║  ███╗      ██╔╝        ██║   ███████║██╔██╗ ██║██║  ███╗██║     █████╗ 
-# ██║     ██║     ██║   ██║██║   ██║     ██╔╝         ██║   ██╔══██║██║╚██╗██║██║   ██║██║     ██╔══╝ 
-# ╚██████╗███████╗╚██████╔╝╚██████╔╝    ██╔╝          ██║   ██║  ██║██║ ╚████║╚██████╔╝███████╗███████╗
-#  ╚═════╝╚══════╝ ╚═════╝  ╚═════╝     ╚═╝           ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝╚══════╝
+# FLowguard Clog and Tangle Detection --------------------------------------------------------------------------------
+# ███████╗██╗      ██████╗ ██╗    ██╗ ██████╗ ██╗   ██╗ █████╗ ██████╗ ██████╗
+# ██╔════╝██║     ██╔═══██╗██║    ██║██╔════╝ ██║   ██║██╔══██╗██╔══██╗██╔══██╗
+# █████╗  ██║     ██║   ██║██║ █╗ ██║██║  ███╗██║   ██║███████║██████╔╝██║  ██║
+# ██╔══╝  ██║     ██║   ██║██║███╗██║██║   ██║██║   ██║██╔══██║██╔══██╗██║  ██║
+# ██║     ███████╗╚██████╔╝╚███╔███╔╝╚██████╔╝╚██████╔╝██║  ██║██║  ██║██████╔╝
+# ╚═╝     ╚══════╝ ╚═════╝  ╚══╝╚══╝  ╚═════╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝
 #
 # Options are available to automatically detects extruder clogs and MMU tangles. Each option works independently and
 # can be combined. Flowguard can even discern the difference between an extruder clog and a spool tangle!
@@ -211,18 +215,25 @@ flowguard_enabled: 1			# 0 = Flowguard protection disabled, 1 = Enabled
 # 'sync_feedback_buffer_range'. It is generally a good starting point if using 5% sync_feedback_speed_multiplier to use
 # about the same distance as sync_feedback_buffer_range. Note that one sided switches (Compression-only and Tension-only)
 # can generally be lower.
-#flowguard_max_relief: 8
-flowguard_max_relief: 14.5
+flowguard_max_relief: 8
 
 # The max_motion is the absolute max permitted extruder movement while the sensor is in an extreme state. Consider this
 # added protection on top of the primary max_relief amount. Again a smaller value is more sensitive to triggering.
-flowguard_max_motion: 80
+# Note that this will have to increase if 'sync_feedback_speed_multiplier' is decreased because of slower recovery.
+flowguard_max_motion: 120
 
-# Encoder clog/tangle detection watches for movement over either a static or automatically adjusted distance - if no encoder
-# movement is seen when the extruder moves this distance a clog/tangle event will be run. Allowing the distance to be
-# adjusted automatically will generally allow for a quicker trigger but use a static length if you run into false triggers.
+# Encoder runout/clog/tangle detection watches for movement over either a static or automatically adjusted distance - if
+# no encoder movement is seen when the extruder moves this distance runout/ clog/tangle event will be generated. Allowing
+# the distance to be adjusted automatically (mode=2) will generally allow for a quicker trigger but use a static length
+# (mode=1, set max_motion) if you get false triggers (see flowguard guide on wiki for more details)
 # Note that this feature cannot disinguish between clog or tangle.
-encoder_clog_detection_mode: 0		# 0 = Disable, 1 = Static length clog detection, 2 = Automatic length clog detection
+flowguard_encoder_mode: 2		# 0 = Disable, 1 = Static length clog detection, 2 = Automatic length clog detection
+
+# The encoder_max_motion is the absolute max permitted extruder movement without the encoder seeing movement when using
+# status mode (mode=1). Smaller values are more sensitive but beware of going too small - slack and friction in the
+# bowden may cause gaps in encoder movement.
+# Note that this value is overriden by any calibrated value stored in 'mmu_vars.cfg' if in automatic mode (mode=2).
+flowguard_encoder_max_motion: 20
 ...
 ```
 
