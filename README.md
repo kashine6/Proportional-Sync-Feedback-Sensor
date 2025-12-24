@@ -125,8 +125,10 @@ A list of recommended ADC-capable pins for common MMU boards will be provided be
 
 ## 🔧 Configuration
 
-At the moment, `Happy-Hare` has **integrated** support for Proportional Feedback Sensors, and the relevant Wiki documentation has already been published.
-👉➡️:  https://github.com/moggieuk/Happy-Hare/wiki/Synchronized-Gear-Extruder2
+At the moment, `Happy-Hare` has **integrated** support for Proportional Feedback Sensors, and the relevant Wiki documentation has already been published. 
+
+👉➡️:  https://github.com/moggieuk/Happy-Hare/wiki/Synchronized-Gear-Extruder2 
+
 For more detailed configuration, please refer to the HappyHare Wiki.
 
 
