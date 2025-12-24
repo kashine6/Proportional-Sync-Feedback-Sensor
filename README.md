@@ -2,7 +2,8 @@
 
 This is a Mini Proportional Sync Feedback Sensor solution designed for MMU systems.
 
-After updating to V1.1, it should be possible to find a usable ADC interface and a suitable voltage interface on all MMU boards.
+After updating to V1.1, 
+it should be possible to find a usable ADC interface and a suitable voltage interface on all MMU boards.
 
 
 **Note:**
