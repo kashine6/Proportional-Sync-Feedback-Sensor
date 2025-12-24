@@ -89,12 +89,12 @@ Some boards—such as **MMB, EBB36, or EBB42**—have **built-in pull-up resisto
 
 To support both boards with and without pull-up resistors,  this sensor board uses a special design compatible with both cases.
 
-Using an MMU board with ADC pull-ups will cause the sensor's ADC reading to shift upward by approximately +0.1V (not constant; this has been minimized using the amplifier). 
+Using an MMU board with ADC pull-ups will cause the sensor's ADC reading to shift upward (not constant; this has been minimized using the amplifier). 
 You can adjust the neutral position value in the configuration to fix this issue.
 
 
 
-## 📍 Recommended ADC Pins
+## 📍 Recommended ADC GPIOs
 You can refer to the chip datasheet to find all GPIOs that support ADC. Below, only one usable pin is marked.  
 
 A list of recommended ADC-capable GPIOs for common MMU boards will be provided below:
