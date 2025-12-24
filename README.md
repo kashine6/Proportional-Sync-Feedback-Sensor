@@ -139,13 +139,9 @@ switching to the flowguard branch:
 
 ```bash
 cd ~/Happy-Hare
+./install.sh -b flowguard
 
-git fetch --all
-git branch -r
-git checkout -b flowguard origin/flowguard
-git pull
-
-./install.sh
+(just remember to switch back to main when it is formerly released)
 ```
 
 
