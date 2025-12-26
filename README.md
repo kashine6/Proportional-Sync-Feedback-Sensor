@@ -4,16 +4,16 @@ This is a Mini Proportional Sync Feedback Sensor solution designed for MMU syste
 
 **Note:**
 
-After updating to V1.1,   
+- After updating to V1.1,   
 it should be possible to find a usable ADC interface and a suitable voltage interface on all MMU boards.
 
 
-Currently shifted to the default single-spring version.
+- Currently shifted to the default single-spring version.
 It provides constant compression, which reduces the apparent load on the extruder stepper and helps overcome Bowden friction.
 
-The STLS folder still includes the dual-spring version.
+- The STLS folder still includes the dual-spring version.
 
-This is just a prototype design. You can use the PCB below to develop your own custom mods or designs, or even simply use a Hall sensor instead of the PCB.
+- This is just a prototype design. You can use the PCB below to develop your own custom mods or designs, or even simply use a Hall sensor instead of the PCB.
 
 
 <img src="Assets/11.png" width="70%"/>
