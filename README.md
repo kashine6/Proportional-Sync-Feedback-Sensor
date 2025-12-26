@@ -13,6 +13,7 @@ It provides constant compression, which reduces the apparent load on the extrude
 
 The STLS folder still includes the dual-spring version.
 
+This is just a prototype design. You can use the PCB below to develop your own custom mods or designs, or even simply use a Hall sensor instead of the PCB.
 
 
 <img src="Assets/11.png" width="70%"/>
