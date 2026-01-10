@@ -182,5 +182,5 @@ $ MMU_CALIBRATE_PSENSOR
 
 - If you wish to sell PFS as a product, you must obtain a commercial license beforehand. (You can contact us via the HH Discord.)
 
-- This project will not provide the original PCB design files. However, you are free to reference this design, and I will not hold you accountable for doing so.
+- This project will not provide the original PCB design files. However, you are free to reference this design, provided that proper attribution is given, and I will not hold you accountable for doing so.
 
