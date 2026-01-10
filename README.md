@@ -45,7 +45,7 @@ For details, please refer to the relevant Happy-Hare documentation.
 This design does not use a dedicated standalone mainboard.
 Instead, it leverages the ADC input already available on existing MMU boards.
 
-If you want to produce the boards yourself, the **PCB Gerber files** are provided and can be used under the GPLv3 license.
+If you want to produce the boards yourself, the **PCB Gerber files** are provided and can be used under the license.
 If you prefer not to make the boards yourself, you can get the kit mentioned below.
 
 
