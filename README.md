@@ -167,5 +167,21 @@ $ MMU_CALIBRATE_PSENSOR
 
 ## 😢 License
 
-This project is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/) license.
+
+## This work is licensed under a
+[Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License][cc-by-nc-sa].
+
+[![CC BY-NC-SA 4.0][cc-by-nc-sa-image]][cc-by-nc-sa]
+
+[cc-by-nc-sa]: http://creativecommons.org/licenses/by-nc-sa/4.0/
+[cc-by-nc-sa-image]: https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png
+[cc-by-nc-sa-shield]: https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg
+
+## License clarification regarding use:
+
+- If you are an individual user, feel free to use it. You may choose to purchase a kit or manufacture the PCB yourself using the provided Gerber files.
+
+- If you wish to sell PFS as a product, you must obtain a commercial license beforehand. (You can contact us via the HH Discord.)
+
+- This project will not provide the original PCB design files. However, you are free to reference this design, and I will not hold you accountable for doing so.
 
