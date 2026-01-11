@@ -176,7 +176,7 @@ $ MMU_CALIBRATE_PSENSOR
 [cc-by-nc-sa-image]: https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png
 [cc-by-nc-sa-shield]: https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg
 
-**License clarification regarding use:**
+**License clarification regarding use (PCB only):**
 
 - If you are an individual user, feel free to use it. You may choose to purchase a kit or manufacture the PCB yourself using the provided Gerber files.
 
