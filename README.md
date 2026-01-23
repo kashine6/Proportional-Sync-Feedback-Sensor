@@ -13,8 +13,9 @@ It provides constant compression, which reduces the apparent load on the extrude
 
 - The STLS folder still includes the dual-spring version.
 
-- This is just a prototype design. You can use the PCB below to develop your own custom mods or designs, or even simply use a Hall sensor instead of the PCB.
+- This is a prototype design. You can use the PCB below to develop your own custom mods or designs, or even simply use a Hall sensor instead of the PCB.
 
+- Ningpj designed a more mini version. [Stumpy_PSF_Sensor](https://github.com/ningpj/Stumpy_PSF_Sensor)
 
 <img src="Assets/11.png" width="70%"/>
 
