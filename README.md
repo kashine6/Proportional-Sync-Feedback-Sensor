@@ -182,7 +182,7 @@ $ MMU_CALIBRATE_PSENSOR
 
 - If you are an individual user, feel free to use it. You may choose to purchase a kit or manufacture the PCB yourself using the provided Gerber files.
 
-- If you wish to sell PFS as a product, you must obtain a commercial license beforehand. (You can contact us via the HH Discord.)
+- If you wish to sell PFS as a product, you must obtain a commercial license beforehand. 
 
 - This project will not provide the original PCB design files. However, you are free to reference this design, provided that proper attribution is given, and I will not hold you accountable for doing so.
 
