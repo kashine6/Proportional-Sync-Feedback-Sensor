@@ -49,6 +49,8 @@ If you want to produce the boards yourself, the **PCB Gerber files** are provide
 If you prefer not to make the boards yourself, you can get the kit mentioned below.
 
 
+Both the DRV5055A2 and MT9105ET Hall sensors can be used.
+
 
 **✅ PSF Board Schematic and PCB**
 
