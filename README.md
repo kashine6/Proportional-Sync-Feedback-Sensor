@@ -147,9 +147,6 @@ sync_feedback_buffer_range: 14.5		# Travel in "buffer" between compression/tensi
 sync_feedback_buffer_maxrange: 14.5	    # Absolute maximum end-to-end travel (mm) provided by buffer (see above)  
 ```
 
-<img src="Assets/12.png" width="70%"/>
-
-
 
 
 
