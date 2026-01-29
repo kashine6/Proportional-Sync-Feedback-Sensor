@@ -160,9 +160,7 @@ Happy-Hare provides a calibration command, `MMU_CALIBRATE_PSENSOR`, to automatic
 
 Before running this command, you need to load the filament into the toolhead.
 
-**Note:**
-
-**If the extruder slips or repeated testing at the same position causes abnormal results, you can use manual calibration, which is simpler.**
+**Note:** If the extruder slips or repeated testing at the same position causes abnormal results, you can use manual calibration, which is simpler.
 
 ```
 $ MMU_CALIBRATE_PSENSOR
