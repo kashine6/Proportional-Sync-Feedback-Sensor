@@ -138,6 +138,8 @@ At the moment, `Happy-Hare` has **integrated** support for Proportional Feedback
 For more detailed configuration, please refer to the HappyHare Wiki.
 
 
+
+
 For PSF Sensor one-Spring:  
 
 ```  
@@ -147,6 +149,34 @@ sync_feedback_buffer_maxrange: 14.5	    # Absolute maximum end-to-end travel (mm
 
 <img src="Assets/12.png" width="70%"/>
 
+
+
+
+
+#### PSF Manual Calibration
+
+Happy-Hare provides a command, `MMU_QUERY_PSENSOR`, to obtain the current raw ADC value. 
+
+```
+$ MMU_QUERY_PSENSOR
+echo: PSENSOR Enabled: True  Value: -1.0  Raw Value: 0.997
+```
+
+You can remove the PSF PCB and place it in a magnetic-field-free environment, use this command to get the value of `sync_feedback_analog_neutral_point`. 
+
+Then, move the slider to the Tension and Compression positions respectively to obtain the values of `sync_feedback_analog_max_tension` and `sync_feedback_analog_max_compression`.
+
+<img src="Assets/12.png" width="70%"/>
+
+
+
+
+
+#### PSF Automatic Calibration
+
+Happy-Hare provides a calibration command, `MMU_CALIBRATE_PSENSOR`, to automatically calibrate the values of the three ADCs. 
+
+Before running this command, you need to load the filament into the toolhead.
 
 ```
 $ MMU_CALIBRATE_PSENSOR
@@ -160,6 +190,10 @@ $ MMU_CALIBRATE_PSENSOR
 // After updating, restart klipper
 ...
 ```
+
+
+
+
 
 
 ## 🙏 References & Acknowledgements
