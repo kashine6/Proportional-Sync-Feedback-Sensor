@@ -154,7 +154,7 @@ sync_feedback_buffer_maxrange: 14.5	    # Absolute maximum end-to-end travel (mm
 
 
 
-#### PSF Automatic Calibration
+#### ✅ PSF Automatic Calibration
 
 Happy-Hare provides a calibration command, `MMU_CALIBRATE_PSENSOR`, to automatically calibrate the values of the three ADCs. 
 
@@ -177,7 +177,7 @@ $ MMU_CALIBRATE_PSENSOR
 Please manually update the test results in the hardware.cfg file.
 
 
-#### PSF Manual Calibration
+#### ✅ PSF Manual Calibration
 
 Happy-Hare provides a command, `MMU_QUERY_PSENSOR`, to obtain the current raw ADC value. 
 
