@@ -191,6 +191,7 @@ You can remove the PSF PCB and place it in a magnetic-field-free environment, us
 
 Then, move the slider to the Tension and Compression positions respectively to obtain the values of `sync_feedback_analog_max_tension` and `sync_feedback_analog_max_compression`.
 
+<img src="Assets/12.png" width="70%"/>
 
 
 ## 🙏 References & Acknowledgements
