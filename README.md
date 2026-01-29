@@ -174,6 +174,7 @@ $ MMU_CALIBRATE_PSENSOR
 // After updating, restart klipper
 ...
 ```
+Please manually update the test results in the hardware.cfg file.
 
 
 #### PSF Manual Calibration
