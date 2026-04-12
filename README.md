@@ -13,6 +13,7 @@
 
 This is a Mini Proportional Sync Feedback Sensor solution designed for MMU systems.  
 
+
 **Note:**
 
 - After updating to V1.1,   
@@ -21,17 +22,16 @@ it should be possible to find a usable ADC interface and a suitable voltage inte
 
 - Currently shifted to the default single-spring version.
 It provides constant compression, which reduces the apparent load on the extruder stepper and helps overcome Bowden friction.
-
-- HappyHare now supports using the PSF as the extruder filament entry sensor.
-
 - The STLs folder still includes the dual-spring version, which has already been deprecated.
-
 - This is a prototype design. You can use the PCB below to develop your own custom mods or designs, or even simply use a Hall sensor instead of the PCB.
 
-- Ningpj designed a more Stumpy version. [Stumpy_PSF_Sensor](https://github.com/ningpj/Stumpy_PSF_Sensor)
 
-<img src="Assets/11.png" width="70%"/>
 
+**Other case versions:**
+
+1. **Ningpj** designed a **More Stumpy version** for ERCF.  [LINK](https://github.com/ningpj/Stumpy_PSF_Sensor)
+2. An version developed by **DW-Tas** for **EMU**.  [LINK](https://github.com/DW-Tas/EMU/tree/main/STL/Tension-compression-sensor/Proportional%20Sync%20Feedback%20(PSF)%20Version)
+3. An version developed by **Batalhoti** for **quattro-box v2**.  [LINK](https://github.com/Batalhoti/QuattroBox/tree/main/QuattroBox_v2_Beta/STLs/hub_psf)
 
 
 
