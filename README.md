@@ -1,7 +1,7 @@
 # PSF (Proportional Sync Feedback) Sensor for MMU
 
 
-> **A kit made by the author is now available on AliExpress.Thank you for your support.**
+> **A kit made by the author is now available on AliExpress.**
 >   
 > [Vano3dla-Aliexpress](https://www.aliexpress.com/item/1005010470743517.html)
 >
@@ -21,6 +21,8 @@ it should be possible to find a usable ADC interface and a suitable voltage inte
 
 - Currently shifted to the default single-spring version.
 It provides constant compression, which reduces the apparent load on the extruder stepper and helps overcome Bowden friction.
+
+- HappyHare now supports using the PSF as the extruder filament entry sensor.
 
 - The STLs folder still includes the dual-spring version, which has already been deprecated.
 
