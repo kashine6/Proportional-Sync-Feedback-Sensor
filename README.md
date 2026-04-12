@@ -22,6 +22,7 @@ it should be possible to find a usable ADC interface and a suitable voltage inte
 
 - Currently shifted to the default single-spring version.
 It provides constant compression, which reduces the apparent load on the extruder stepper and helps overcome Bowden friction.
+- HappyHare now supports using the PSF as the extruder entry sensor for filament detection.
 - The STLs folder still includes the dual-spring version, which has already been deprecated.
 - This is a prototype design. You can use the PCB below to develop your own custom mods or designs, or even simply use a Hall sensor instead of the PCB.
 
