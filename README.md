@@ -21,7 +21,7 @@ it should be possible to find a usable ADC interface and a suitable voltage inte
 2. Currently shifted to the default **single-spring version**. It provides constant compression, which reduces the apparent load on the extruder stepper and helps overcome Bowden friction.
    The STLs folder still includes the dual-spring version, which has already been deprecated.
 3. **HappyHare** provides strong support for PSF. [WIKI LINK](https://github.com/moggieuk/Happy-Hare/wiki/Synchronized-Gear-Extruder)  
-Now HappyHare supports using the PSF as the extruder entry sensor for filament detection.
+Now HappyHare supports using the PSF as the extruder entry sensor for filament detection.[PULL](https://github.com/moggieuk/Happy-Hare/pull/936)
 4. **AFC** currently does not support PSF.
 5. This is a prototype design. You can use the PCB below to develop your own custom mods or designs, or even simply use a Hall sensor instead of the PCB.
 
