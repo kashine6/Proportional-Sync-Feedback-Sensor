@@ -5,6 +5,10 @@
 >   
 > [Vano3dla-Aliexpress](https://www.aliexpress.com/item/1005010470743517.html)
 >
+> **Authorized Resellers**
+> * [DREMC](https://store.dremc.com.au/en-us/products/vano3dla-psf-sensor-kit-proportional-sync-feedback-sensor-for-mmu) (Australia)
+> * [OneTwo3D](https://www.onetwo3d.co.uk/product/psf-proportional-sync-feedback-sensor-for-mmu/) (UK)
+> 
 > **Additional authorization information:**  
 > Trianglelab and BLV are authorized to use the PSF Kit in their MMU kits.
 >
